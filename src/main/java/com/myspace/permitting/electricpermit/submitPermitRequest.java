@@ -13,11 +13,7 @@ public class submitPermitRequest implements WorkItemHandler {
 	static int currentId = 10001;
 
     public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
-    	String id = "DENIED";
-        Applicant applicant = (Applicant) workItem.getParameter("applicant");
-        if (!applicant.getName().equals("DENIED")) {
-           id = String.format("REP-%d", currentId++);
-        }
+    	String id = String.format("RSP-%d", currentId++);
 
         Map<String, Object> results = new HashMap<String, Object>();
         results.put("applicationID", id);
